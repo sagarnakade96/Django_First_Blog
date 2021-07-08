@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block blogactive %}active{% endblock blogactive %}
+
+{% block body %}
+{% for blog in blogs %}
+<div class="container my-2">
+{{ blog.title }}
+<div class="media">
+  <img src="..." class="align-self-start mr-3 my-2" alt="...">
+  <div class="media-body">
+    <h5 class="my-4"><a href="/blogpost/{{blog.slug}}" class = "text-dark"> {{ blog.title }}  </a></h5>
+    <p>{{ blog.content|slice:50 }}...</p>
+    <div>
+    <a href="/blogpost/{{blog.slug}}" class = "text-dark"><button type="button" class="btn btn-primary">Read More</button>
+   </a>
+    </div>
+</div>
+{% endfor %}
+</div>
+{% endblock body %}
+

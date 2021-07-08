@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block blogactive %}active{% endblock blogactive %}
+
+{% block body %}
+
+<div class="container my-2">
+  <div >
+    <h5 class="my-4">{{ blogs.title }} </h5>
+       <p class='my-3'>  {{ blogs.content | safe }}  </p>
+
+  </div>
+</div>
+
+
+{% endblock body %}
+
